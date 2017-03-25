@@ -1,4 +1,6 @@
 {
+  "extends": "airbnb-base"
+/*
   "parser": "babel-eslint",
   "env": {
     "node": true,
@@ -8,4 +10,5 @@
     "vars-on-top": 2,
     "no-undef": 2
   }
+*/
 }

@@ -1,9 +1,59 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 16px Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+/* Services page
+------------------------------- */
+
+.services__body {
+  display: flex;
 }
 
+.services-datagrid {
+  border: 1px solid #dddddd;
+  border-collapse: collapse;
+}
+
+.services-datagrid__cell {
+  padding: 15px;
+  text-align: left;
+  border: 1px solid #dddddd;
+}
+
+.services-form {
+  background-color: #f1f1f1;
+  padding: 30px;
+  border-radius: 6px;
+}
+
+.services-form__field {
+  margin-bottom: 20px;
+}
+
+.services-form__field-label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.services-form__field-input {
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1em;
+  padding: 10px;
+}
+
+.services-form__action {
+  font-size: 1em;
+  cursor: pointer;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: #2dbe60;
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  text-transform: uppercase;
+}

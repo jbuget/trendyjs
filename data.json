@@ -1,0 +1,66 @@
+[
+  {
+    "_id": "58d6af1b3a8b1fa63ff83790",
+    "name": "Ember",
+    "npmPackage": "ember-cli",
+    "githubRepository": "emberjs/ember.js",
+    "stackoverflowTag": "ember.js",
+    "__v": 0
+  },
+  {
+    "_id": "58d6afb83a8b1fa63ff83791",
+    "name": "React",
+    "npmPackage": "react",
+    "githubRepository": "facebook/react",
+    "stackoverflowTag": "reactjs",
+    "__v": 0
+  },
+  {
+    "_id": "58d6b9ac3a8b1fa63ff83793",
+    "name": "Vue.js",
+    "npmPackage": "vue",
+    "githubRepository": "vuejs/vue",
+    "stackoverflowTag": "vue.js",
+    "__v": 0
+  },
+  {
+    "_id": "58d6bdeb3a8b1fa63ff83794",
+    "name": "AngularJS (version 1.X)",
+    "npmPackage": "angular",
+    "githubRepository": "angular/angular.js",
+    "stackoverflowTag": "angular",
+    "__v": 0
+  },
+  {
+    "_id": "58d6bf8a3a8b1fa63ff83795",
+    "name": "Angular (version 2 and above)",
+    "npmPackage": "@angular/cli",
+    "githubRepository": "angular/angular",
+    "stackoverflowTag": "angular2",
+    "__v": 0
+  },
+  {
+    "_id": "58d6bfe33a8b1fa63ff83796",
+    "name": "ELM",
+    "npmPackage": "elm",
+    "githubRepository": "elm-lang/elm-platform",
+    "stackoverflowTag": "elm",
+    "__v": 0
+  },
+  {
+    "_id": "58d6c10a3a8b1fa63ff83797",
+    "name": "Aurelia",
+    "npmPackage": "aurelia-cli",
+    "githubRepository": "aurelia/framework",
+    "stackoverflowTag": "aurelia",
+    "__v": 0
+  },
+  {
+    "_id": "58d6c1753a8b1fa63ff83798",
+    "name": "Backbone",
+    "npmPackage": "backbone",
+    "githubRepository": "jashkenas/backbone",
+    "stackoverflowTag": "backbone.js",
+    "__v": 0
+  }
+]

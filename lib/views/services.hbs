@@ -1,37 +1,50 @@
 <div class="services">
   <h1>Services</h1>
 
-  <form class="services-form" action="/services">
-    <div class="services-form-field services-form-field--name">
-      <label>Name</label>
-      <input name="serviceName">
-    </div>
+  <div class="services__body">
+    <table class="services-datagrid">
+      <thead>
+      <tr class="services-datagrid__row">
+        <th class="services-datagrid__cell">Service</th>
+        <th class="services-datagrid__cell">npm package</th>
+        <th class="services-datagrid__cell">GitHub repository</th>
+        <th class="services-datagrid__cell">Stack Overflow tag</th>
+      </tr>
+      </thead>
+      <tbody>
+      {{#each services as |service|}}
+        <tr class="services-datagrid__row">
+          <td class="services-datagrid__cell"><a href="/services/{{service.ref}}">{{service.name}}</a></td>
+          <td class="services-datagrid__cell">{{service.npmPackage}}</td>
+          <td class="services-datagrid__cell">{{service.githubRepository}}</td>
+          <td class="services-datagrid__cell">{{service.stackoverflowTag}}</td>
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
 
-    <div class="services-form-field services-form-field--npm">
-      <label>Ref. NPMJS</label>
-      <input name="npmRef">
-    </div>
-
-    <div class="services-form-field services-form-field--github">
-      <label>Ref. GitHub</label>
-      <input name="githubRef">
-    </div>
-
-    <div class="services-form-field services-form-field--stackoverflow">
-      <label>Ref. StackOverflow</label>
-      <input name="stackoverflowRef">
-    </div>
-
-    <button class="services-form__action services-form__action-submit">Ajouter</button>
-  </form>
-
-  <hr>
-
-  <ul class="services__list">
-    {{#each services as |services|}}
-      <li class="services__item">
-        {{service.name}}
-      </li>
-    {{/each}}
-  </ul>
+    <form class="services-form" method="post" action="/services">
+      <div class="services-form__field services-form__field--name">
+        <label class="services-form__field-label" for="serviceName">Service name:</label>
+        <input class="services-form__field-input" name="serviceName" title="Service name" placeholder="ex: Ember" autofocus required>
+      </div>
+      <div class="services-form__field services-form__field--ref">
+        <label class="services-form__field-label" for="serviceRef">Service ref:</label>
+        <input class="services-form__field-input" name="serviceRef" title="Service reference" placeholder="ex: ember" autofocus required>
+      </div>
+      <div class="services-form__field services-form__field--npm">
+        <label class="services-form__field-label" for="npmPackage">npm package:</label>
+        <input class="services-form__field-input" name="npmPackage" title="npm package name" placeholder="ex: ember-cli" required>
+      </div>
+      <div class="services-form__field services-form__field--github">
+        <label class="services-form__field-label" for="githubRepository">GitHub repository:</label>
+        <input class="services-form__field-input" name="githubRepository" title="GitHub repository full name" placeholder="ex: emberjs/ember.js" required>
+      </div>
+      <div class="services-form__field services-form__field--stackoverflow">
+        <label class="services-form__field-label" for="stackoverflowTag">Stack Overflow tag:</label>
+        <input class="services-form__field-input" name="stackoverflowTag" title="Stack Overflow reference tag" placeholder="ex: emberjs" required>
+      </div>
+      <button class="services-form__action services-form__action-submit" type="submit">Ajouter</button>
+    </form>
+  </div>
 </div>
