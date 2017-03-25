@@ -1,0 +1,35 @@
+<div class="services">
+  <h1>Services</h1>
+
+  <form class="services__form" action="/services">
+    <div class="services__form-field services__form-field--name">
+      <label>Name</label>
+      <input name="serviceName">
+    </div>
+
+    <div class="services__form-field services__form-field--npm">
+      <label>Ref. NPMJS</label>
+      <input name="npmRef">
+    </div>
+
+    <div class="services__form-field services__form-field--github">
+      <label>Ref. GitHub</label>
+      <input name="githubRef">
+    </div>
+
+    <div class="services__form-field services__form-field--stackoverflow">
+      <label>Ref. StackOverflow</label>
+      <input name="stackoverflowRef">
+    </div>
+  </form>
+
+  <hr>
+
+  <ul class="services__list">
+    {{#each services as |services|}}
+      <li class="services__item">
+        {{service.name}}
+      </li>
+    {{/each}}
+  </ul>
+</div>
