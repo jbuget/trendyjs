@@ -11,7 +11,7 @@
     "dev": "nodemon lib/bin/www --exec babel-node",
     "build": "babel lib -d dist --copy-files",
     "start": "node dist/bin/www",
-    "postinstall": "if [ $NODE_ENV == production ]; then npm run build; fi"
+    "postinstall": "if [ $NODE_ENV=production ]; then npm run build; fi"
   },
   "dependencies": {
     "body-parser": "~1.16.0",
