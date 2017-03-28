@@ -10,7 +10,8 @@
     "lint": "eslint lib/app.js",
     "dev": "nodemon lib/bin/www --exec babel-node",
     "build": "babel lib -d dist --copy-files",
-    "start": "node dist/bin/www"
+    "start": "node dist/bin/www",
+    "postinstall": "yarn run build"
   },
   "dependencies": {
     "body-parser": "~1.16.0",
