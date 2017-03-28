@@ -1,3 +1,3 @@
 "scripts": {
-  "postinstall": "yarn build"
+  "postinstall": "echo "LOULOU" && yarn build"
 }
