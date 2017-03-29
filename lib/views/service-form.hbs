@@ -1,0 +1,67 @@
+<div class="service-form">
+
+  {{#if readOnly}}
+    <h1>Service creation</h1>
+  {{else}}
+    <h1>Service edition</h1>
+  {{/if}}
+
+  <form class="service-form__form" method="post" action="/services">
+    <div class="service-form__field service-form__field--name">
+      <label class="service-form__field-label" for="name">Service name:</label>
+      <input class="service-form__field-input"
+             name="name"
+             title="Service name"
+             placeholder="ex: Ember"
+             value="{{service.name}}"
+             autofocus
+             required>
+    </div>
+    <div class="service-form__field service-form__field--description">
+      <label class="service-form__field-label" for="description">Service description:</label>
+      <textarea class="service-form__field-textarea"
+             name="description"
+             title="Service description"
+             placeholder="ex: Ember">
+        {{service.description}}
+      </textarea>
+    </div>
+    <div class="service-form__field service-form__field--ref">
+      <label class="service-form__field-label" for="ref">Service ref:</label>
+      <input class="service-form__field-input"
+             name="ref"
+             title="Service reference"
+             placeholder="ex: ember"
+             value="{{service.ref}}"
+             required>
+    </div>
+    <div class="service-form__field service-form__field--npm">
+      <label class="service-form__field-label" for="npmPackage">npm package:</label>
+      <input class="service-form__field-input"
+             name="npmPackage"
+             title="npm package name"
+             placeholder="ex: ember-cli"
+             value="{{service.npmPackage}}"
+             required>
+    </div>
+    <div class="service-form__field service-form__field--github">
+      <label class="service-form__field-label" for="githubRepository">GitHub repository:</label>
+      <input class="service-form__field-input"
+             name="githubRepository"
+             title="GitHub repository full name"
+             placeholder="ex: emberjs/ember.js"
+             value="{{service.githubRepository}}"
+             required>
+    </div>
+    <div class="service-form__field service-form__field--stackoverflow">
+      <label class="service-form__field-label" for="stackoverflowTag">Stack Overflow tag:</label>
+      <input class="service-form__field-input"
+             name="stackoverflowTag"
+             title="Stack Overflow reference tag"
+             placeholder="ex: emberjs"
+             value="{{service.stackoverflowTag}}"
+             required>
+    </div>
+    <button class="service-form__action service-form__action-submit" type="submit">Ajouter</button>
+  </form>
+</div>

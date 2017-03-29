@@ -10,33 +10,116 @@ body {
   display: flex;
 }
 
-.services-datagrid {
-  border: 1px solid #dddddd;
-  border-collapse: collapse;
+/* Services page - list
+------------------------------- */
+.service-list {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.services-datagrid__cell {
-  padding: 15px;
-  text-align: left;
-  border: 1px solid #dddddd;
+.service-item {
+  display: inline-block;
+  border: 1px solid #D8DDE6;
+  border-radius: 2px;
+  width: 284px;
+  margin: 2px;
 }
 
-.services-form {
+.service-item:active,
+.service-item:focus,
+.service-item:hover {
+  border: 1px solid #7B569F;
+  box-shadow: 0 1px 4px rgba(123,86,159,0.4);
+  transition: all 150ms ease-in-out;
+}
+
+.service-item__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.service-item__header{
+  padding: 20px 20px 0;
+}
+
+.service-item__logo {
+  max-height: 24px;
+  width: 24px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.service-item__ref {
+  display: inline-block;
+  font-size: 13px;
+  margin-bottom: 10px;
+  min-height: 24px;
+}
+
+.service-item__body {
+ padding: 0 20px 20px;
+}
+
+.service-item__name {
+  margin: 10px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #3F3F44;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.service-item__separator {
+  height: 1px;
+  margin: 20px 0;
+  background: linear-gradient(to left, #64438B, #C6ACE5);
+  border: none;
+}
+
+.service-item__description {
+  font-size: 12px;
+  color: #4C4C4C;
+  margin: 0;
+}
+
+.service-item__stats {
+  background: rgba(242,242,245,0.5);
+  opacity: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 10px;
+  vertical-align: middle;
+  margin-top: auto;
+}
+
+.service-item__stat {
+  display: inline-block;
+  margin-right: 10px;
+  color: #3F3F44;
+  font-size: 12px;
+  vertical-align: middle;
+  line-height: 12px;
+}
+
+/* Service-form page - form
+------------------------------- */
+.service-form {
   background-color: #f1f1f1;
   padding: 30px;
   border-radius: 6px;
 }
 
-.services-form__field {
+.service-form__field {
   margin-bottom: 20px;
 }
 
-.services-form__field-label {
+.service-form__field-label {
   display: block;
   margin-bottom: 8px;
 }
 
-.services-form__field-input {
+.service-form__field-input {
   border: 1px solid #ccc;
   box-shadow: inset 0 1px 3px #ddd;
   border-radius: 4px;
@@ -45,7 +128,7 @@ body {
   padding: 10px;
 }
 
-.services-form__action {
+.service-form__action {
   font-size: 1em;
   cursor: pointer;
   padding: 10px;

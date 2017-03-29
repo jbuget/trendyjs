@@ -1,50 +1,34 @@
 <div class="services">
   <h1>Services</h1>
 
-  <div class="services__body">
-    <table class="services-datagrid">
-      <thead>
-      <tr class="services-datagrid__row">
-        <th class="services-datagrid__cell">Service</th>
-        <th class="services-datagrid__cell">npm package</th>
-        <th class="services-datagrid__cell">GitHub repository</th>
-        <th class="services-datagrid__cell">Stack Overflow tag</th>
-      </tr>
-      </thead>
-      <tbody>
-      {{#each services as |service|}}
-        <tr class="services-datagrid__row">
-          <td class="services-datagrid__cell"><a href="/services/{{service.ref}}">{{service.name}}</a></td>
-          <td class="services-datagrid__cell">{{service.npmPackage}}</td>
-          <td class="services-datagrid__cell">{{service.githubRepository}}</td>
-          <td class="services-datagrid__cell">{{service.stackoverflowTag}}</td>
-        </tr>
-      {{/each}}
-      </tbody>
-    </table>
-
-    <form class="services-form" method="post" action="/services">
-      <div class="services-form__field services-form__field--name">
-        <label class="services-form__field-label" for="serviceName">Service name:</label>
-        <input class="services-form__field-input" name="serviceName" title="Service name" placeholder="ex: Ember" autofocus required>
-      </div>
-      <div class="services-form__field services-form__field--ref">
-        <label class="services-form__field-label" for="serviceRef">Service ref:</label>
-        <input class="services-form__field-input" name="serviceRef" title="Service reference" placeholder="ex: ember" autofocus required>
-      </div>
-      <div class="services-form__field services-form__field--npm">
-        <label class="services-form__field-label" for="npmPackage">npm package:</label>
-        <input class="services-form__field-input" name="npmPackage" title="npm package name" placeholder="ex: ember-cli" required>
-      </div>
-      <div class="services-form__field services-form__field--github">
-        <label class="services-form__field-label" for="githubRepository">GitHub repository:</label>
-        <input class="services-form__field-input" name="githubRepository" title="GitHub repository full name" placeholder="ex: emberjs/ember.js" required>
-      </div>
-      <div class="services-form__field services-form__field--stackoverflow">
-        <label class="services-form__field-label" for="stackoverflowTag">Stack Overflow tag:</label>
-        <input class="services-form__field-input" name="stackoverflowTag" title="Stack Overflow reference tag" placeholder="ex: emberjs" required>
-      </div>
-      <button class="services-form__action services-form__action-submit" type="submit">Ajouter</button>
-    </form>
+  <div class="service-list">
+    {{#each services as |service|}}
+      <article class="service-item">
+        <a class="service-item__link" href="/services/{{service.ref}}">
+          <header class="service-item__header">
+            <img class="service-item__logo" src="images/button_icon.svg" alt="">
+            <span class="service-item__ref">{{service.ref}}</span>
+          </header>
+          <div class="service-item__body">
+            <h3 class="service-item__name">{{service.name}}</h3>
+            <hr class="service-item__separator">
+            <p class="service-item__description">{{service.description}}</p>
+          </div>
+          <footer class="service-item__footer">
+            <div class="service-item__stats">
+              <div class="service-item__stat">
+                <span class="service-item__stat-icon service-item__stat-icon--downloads"></span>
+                <span class="service-item__stat-label">XXX</span>
+              </div>
+              <div class="service-item__stat">
+                <span class="service-item__stat-icon service-item__stat-icon--downloads"></span>
+                <span class="service-item__stat-label">XXX</span>
+              </div>
+            </div>
+          </footer>
+        </a>
+      </article>
+    {{/each}}
   </div>
+
 </div>
