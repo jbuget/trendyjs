@@ -7,7 +7,9 @@
     "npm": "4.x"
   },
   "scripts": {
-    "lint": "eslint lib/app.js",
+    "eslint": "eslint lib/app.js",
+    "csslint": "stylelint lib/public/stylesheets/**/*.css",
+    "lint": "npm run eslint && npm run csslint",
     "dev": "nodemon lib/bin/www --exec babel-node",
     "build": "babel lib -d dist --copy-files",
     "start": "node dist/bin/www",
@@ -29,7 +31,8 @@
     "mongoose": "^4.9.1",
     "morgan": "~1.7.0",
     "request": "^2.81.0",
-    "serve-favicon": "~2.3.2"
+    "serve-favicon": "~2.3.2",
+    "stylelint": "^7.9.0"
   },
   "devDependencies": {
     "eslint": "^3.18.0",
