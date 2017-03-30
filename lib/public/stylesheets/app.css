@@ -1,3 +1,6 @@
+/* vendors */
+@import '/node_modules/font-awesome/css/font-awesome.css';
+
 /* partials */
 @import 'partials/footer.css';
 @import 'partials/header.css';
@@ -129,3 +132,7 @@ main {
   line-height: 12px;
 }
 
+
+.service-item__stat-label {
+  margin-left: 5px;
+}
