@@ -5,10 +5,28 @@
 
 /* pages */
 @import 'pages/index.css';
+@import 'pages/service-form.css';
 @import 'pages/services.css';
 
 body {
   font: 16px Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+main {
+  overflow: auto;
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  width: 100%;
+}
+
+.page {
+  margin-left: 240px;
+  height: auto;
+  width: auto;
+  position: relative;
+  padding: 20px;
 }
 
 /* Services page
@@ -89,6 +107,7 @@ body {
   font-size: 12px;
   color: #4C4C4C;
   margin: 0;
+  height: 42px;
 }
 
 .service-item__stats {
@@ -110,41 +129,3 @@ body {
   line-height: 12px;
 }
 
-/* Service-form page - form
-------------------------------- */
-.service-form {
-  background-color: #f1f1f1;
-  padding: 30px;
-  border-radius: 6px;
-}
-
-.service-form__field {
-  margin-bottom: 20px;
-}
-
-.service-form__field-label {
-  display: block;
-  margin-bottom: 8px;
-}
-
-.service-form__field-input {
-  border: 1px solid #ccc;
-  box-shadow: inset 0 1px 3px #ddd;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-size: 1em;
-  padding: 10px;
-}
-
-.service-form__action {
-  font-size: 1em;
-  cursor: pointer;
-  padding: 10px;
-  box-sizing: border-box;
-  border-radius: 4px;
-  background-color: #2dbe60;
-  color: #ffffff;
-  font-weight: 600;
-  border: none;
-  text-transform: uppercase;
-}

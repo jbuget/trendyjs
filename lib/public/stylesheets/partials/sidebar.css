@@ -1,4 +1,8 @@
 .sidebar {
-  width: 100px;
+  position: fixed;
+  width: 240px;
   height: 100%;
+  top: 60px;
+  background: #fff;
+  border-right:1px solid #ccc;
 }

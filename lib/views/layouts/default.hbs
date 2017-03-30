@@ -5,17 +5,11 @@
     <link rel='stylesheet' href='/stylesheets/app.css' />
   </head>
   <body>
-    <header>
-      {{> header }}
-    </header>
-    <aside>
-      {{> sidebar }}
-    </aside>
+    <header>{{> header }}</header>
     <main>
+      <aside>{{> sidebar }}</aside>
       {{{body}}}
     </main>
-    <footer>
-      {{> footer }}
-    </footer>
+    <footer>{{> footer }}</footer>
   </body>
 </html>
