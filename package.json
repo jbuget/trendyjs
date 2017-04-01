@@ -14,8 +14,8 @@
     "build": "babel lib -d dist --copy-files",
     "start": "node dist/bin/www",
     "postinstall": "if [ $NODE_ENV=production ]; then npm run build; fi",
-    "test": "mocha --require babel-polyfill --compilers js:babel-register",
-    "test:watch": "mocha --recursive --watch --require babel-polyfill --compilers js:babel-register"
+    "test": "mocha --recursive --require babel-polyfill --compilers js:babel-register",
+    "test:watch": "npm test -- --watch"
   },
   "dependencies": {
     "babel-cli": "^6.24.0",
@@ -34,6 +34,7 @@
     "hbs": "~4.0.1",
     "lodash": "^4.17.4",
     "mocha": "^3.2.0",
+    "moment": "^2.18.1",
     "mongodb": "^2.2.25",
     "mongoose": "^4.9.1",
     "morgan": "~1.7.0",
