@@ -14,14 +14,12 @@ describe.only('Services | snapshots', function () {
 
   describe('#fetchAndFeedDataFromReferential', function () {
 
-    let ServiceMock;
-
     beforeEach(function() {
-        ServiceMock = sinon.stub(Service, 'find');
+        sinon.stub(Service, 'find');
     });
 
     afterEach(function() {
-        ServiceMock.restore();
+        Service.find.restore();
     });
 
     it('should return a promise resolving with an array of services object initiated from referential data', function (done) {
