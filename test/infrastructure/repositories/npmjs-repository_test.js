@@ -2,17 +2,17 @@ import { describe, it, beforeEach, afterEach } from 'mocha';
 import { expect } from 'chai';
 import { stub } from 'sinon';
 
-import npmjs from '../../../lib/infrastructure/repositories/npmjs';
+import npmjsRepository from '../../../lib/infrastructure/repositories/npmjs-repository';
 import request from 'request';
 
-describe('NPMjs', function () {
+describe('Unit | Infrastructure | Repository | NPMJS', function () {
 
   describe('#fetchData', function () {
 
     const services = [
-      { serviceRef: 'service_A', dataSourceRef: 'dataSource_A' },
-      { serviceRef: 'service_B', dataSourceRef: 'dataSource_B' },
-      { serviceRef: 'service_C', dataSourceRef: 'dataSource_C' }
+      { ref: 'service_A', npmjsPackage: 'dataSource_A' },
+      { ref: 'service_B', npmjsPackage: 'dataSource_B' },
+      { ref: 'service_C', npmjsPackage: 'dataSource_C' }
     ];
 
     let getStub;
@@ -28,29 +28,29 @@ describe('NPMjs', function () {
     });
 
     it('should return a promise', () => {
-      return npmjs.fetchData(services);
+      return npmjsRepository.fetchData(services);
     });
 
     it('should return an Object map of service references', () => {
-      return npmjs.fetchData(services).then(result => {
+      return npmjsRepository.fetchData(services).then(result => {
         expect(result).to.include.keys('service_A', 'service_B', 'service_C');
       });
     });
 
     it('should fetch last-day data from NPMJS registry', () => {
-      return npmjs.fetchData(services).then(() => {
+      return npmjsRepository.fetchData(services).then(() => {
         expect(getStub).to.have.been.calledWith('https://api.npmjs.org/downloads/point/last-day/dataSource_A,dataSource_B,dataSource_C');
       });
     });
 
     it('should fetch last-week data from NPMJS registry', () => {
-      return npmjs.fetchData(services).then(() => {
+      return npmjsRepository.fetchData(services).then(() => {
         expect(getStub).to.have.been.calledWith('https://api.npmjs.org/downloads/point/last-week/dataSource_A,dataSource_B,dataSource_C');
       });
     });
 
     it('should fetch last-month data from NPMJS registry', () => {
-      return npmjs.fetchData(services).then(() => {
+      return npmjsRepository.fetchData(services).then(() => {
         expect(getStub).to.have.been.calledWith('https://api.npmjs.org/downloads/point/last-month/dataSource_A,dataSource_B,dataSource_C');
       });
     });
@@ -128,66 +128,72 @@ describe('NPMjs', function () {
       });
 
       // when
-      return npmjs.fetchData(services).then(result => {
+      return npmjsRepository.fetchData(services).then(result => {
         expect(result).to.deep.equal({
           "service_A": {
-            "last-day": {
-              "downloads": 10,
-              "package": "dataSource_A",
-              "start": "2017-05-07",
-              "end": "2017-05-07"
-            },
-            "last-week": {
-              "downloads": 100,
-              "package": "dataSource_A",
-              "start": "2017-05-01",
-              "end": "2017-05-07"
-            },
-            "last-month": {
-              "downloads": 1000,
-              "package": "dataSource_A",
-              "start": "2017-04-08",
-              "end": "2017-05-07"
+            "npmjs": {
+              "last-day": {
+                "downloads": 10,
+                "package": "dataSource_A",
+                "start": "2017-05-07",
+                "end": "2017-05-07"
+              },
+              "last-week": {
+                "downloads": 100,
+                "package": "dataSource_A",
+                "start": "2017-05-01",
+                "end": "2017-05-07"
+              },
+              "last-month": {
+                "downloads": 1000,
+                "package": "dataSource_A",
+                "start": "2017-04-08",
+                "end": "2017-05-07"
+              }
             }
           },
           "service_B": {
-            "last-day": {
-              "downloads": 20,
-              "package": "dataSource_B",
-              "start": "2017-05-07",
-              "end": "2017-05-07"
-            },
-            "last-week": {
-              "downloads": 200,
-              "package": "dataSource_B",
-              "start": "2017-05-01",
-              "end": "2017-05-07"
-            },
-            "last-month": {
-              "downloads": 2000,
-              "package": "dataSource_B",
-              "start": "2017-04-08",
-              "end": "2017-05-07"
+            "npmjs": {
+              "last-day": {
+                "downloads": 20,
+                "package": "dataSource_B",
+                "start": "2017-05-07",
+                "end": "2017-05-07"
+              },
+              "last-week": {
+                "downloads": 200,
+                "package": "dataSource_B",
+                "start": "2017-05-01",
+                "end": "2017-05-07"
+              },
+              "last-month": {
+                "downloads": 2000,
+                "package": "dataSource_B",
+                "start": "2017-04-08",
+                "end": "2017-05-07"
+              }
             }
           },
           "service_C": {
-            "last-day": {
-              "downloads": 30,
-              "package": "dataSource_C",
-              "start": "2017-05-07",
-              "end": "2017-05-07"
-            },
-            "last-week": {
-              "downloads": 300,
-              "package": "dataSource_C",
-              "start": "2017-05-01",
-              "end": "2017-05-07"
-            },
-            "last-month": {
-              "downloads": 3000,
-              "package": "dataSource_C",
-              "start": "2017-04-08",
-              "end": "2017-05-07"
+            "npmjs": {
+              "last-day": {
+                "downloads": 30,
+                "package": "dataSource_C",
+                "start": "2017-05-07",
+                "end": "2017-05-07"
+              },
+              "last-week": {
+                "downloads": 300,
+                "package": "dataSource_C",
+                "start": "2017-05-01",
+                "end": "2017-05-07"
+              },
+              "last-month": {
+                "downloads": 3000,
+                "package": "dataSource_C",
+                "start": "2017-04-08",
+                "end": "2017-05-07"
+              }
             }
           }
         });
