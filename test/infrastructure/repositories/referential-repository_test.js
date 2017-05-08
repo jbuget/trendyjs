@@ -16,7 +16,7 @@ describe('Unit | Infrastructure | Repository | Referential', function () {
           ref: 'angular',
           npmPackage: 'angular', // FIXME
           githubRepository: 'angular/angular',
-          stackoverflowTag: 'angular2'
+          stackoverflowTag: 'angular'
         },
         angularjs: {
           name: 'AngularJS (ex-Angular 1.x)',
