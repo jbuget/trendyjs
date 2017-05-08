@@ -10,7 +10,7 @@ import Service  from '../../lib/domain/service';
 import snapshots from '../../lib/domain/snapshots';
 require('chai').use(sinonChai);
 
-describe.only('Services | snapshots', function () {
+describe.skip('Services | snapshots', function () {
 
   describe('#fetchAndFeedDataFromReferential', function () {
 
