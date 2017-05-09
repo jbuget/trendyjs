@@ -9,11 +9,11 @@ describe('Unit | Infrastructure | Repository | GitHub', function () {
 
   describe('#fetchData', function () {
 
-    const services = [
-      { ref: 'service_A', githubRepository: 'user_A/repo_A' },
-      { ref: 'service_B', githubRepository: 'user_B/repo_B' },
-      { ref: 'service_C', githubRepository: 'user_C/repo_C' }
-    ];
+    const services = {
+      'service_A': { references: { trendyjs: 'service_A', githubRepository: 'user_A/repo_A' } },
+      'service_B': { references: { trendyjs: 'service_B', githubRepository: 'user_B/repo_B' } },
+      'service_C': { references: { trendyjs: 'service_C', githubRepository: 'user_C/repo_C' } }
+    };
 
     let getRepoDetailsStub;
 
@@ -81,7 +81,11 @@ describe('Unit | Infrastructure | Repository | GitHub', function () {
       return githubRepository.fetchData(services).then(result => {
         expect(result).to.deep.equal({
           "service_A": {
-            "github": {
+            references: {
+              trendyjs: 'service_A',
+              githubRepository: 'user_A/repo_A'
+            },
+            github: {
               "repository": 'user_A/repo_A',
               "stars": 10,
               "forks": 100,
@@ -90,7 +94,11 @@ describe('Unit | Infrastructure | Repository | GitHub', function () {
             }
           },
           "service_B": {
-            "github": {
+            references: {
+              trendyjs: 'service_B',
+              githubRepository: 'user_B/repo_B'
+            },
+            github: {
               "repository": 'user_B/repo_B',
               "stars": 20,
               "forks": 200,
@@ -99,7 +107,11 @@ describe('Unit | Infrastructure | Repository | GitHub', function () {
             }
           },
           "service_C": {
-            "github": {
+            references: {
+              trendyjs: 'service_C',
+              githubRepository: 'user_C/repo_C'
+            },
+            github: {
               "repository": 'user_C/repo_C',
               "stars": 30,
               "forks": 300,

@@ -9,11 +9,11 @@ describe('Unit | Infrastructure | Repository | StackOverflow', function () {
 
   describe('#fetchData', function () {
 
-    const services = [
-      { ref: 'service_A', stackoverflowTag: 'tag_A' },
-      { ref: 'service_B', stackoverflowTag: 'tag_B' },
-      { ref: 'service_C', stackoverflowTag: 'tag_C' }
-    ];
+    const services = {
+      'service_A': { references: { trendyjs: 'service_A', stackoverflowTag: 'tag_A' } },
+      'service_B': { references: { trendyjs: 'service_B', stackoverflowTag: 'tag_B' } },
+      'service_C': { references: { trendyjs: 'service_C', stackoverflowTag: 'tag_C' } }
+    };
 
     let getStub;
 
@@ -63,19 +63,31 @@ describe('Unit | Infrastructure | Repository | StackOverflow', function () {
       // given
       const expected = {
         "service_A": {
-          "stackoverflow": {
+          references: {
+            trendyjs: 'service_A',
+            stackoverflowTag: 'tag_A'
+          },
+          stackoverflow: {
             "tag": 'tag_A',
             "count": 10
           }
         },
         "service_B": {
-          "stackoverflow": {
+          references: {
+            trendyjs: 'service_B',
+            stackoverflowTag: 'tag_B'
+          },
+          stackoverflow: {
             "tag": 'tag_B',
             "count": 20
           }
         },
         "service_C": {
-          "stackoverflow": {
+          references: {
+            trendyjs: 'service_C',
+            stackoverflowTag: 'tag_C'
+          },
+          stackoverflow: {
             "tag": 'tag_C',
             "count": 30
           }
